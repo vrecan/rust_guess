@@ -18,13 +18,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "hello_cargo"
-version = "0.1.0"
-dependencies = [
- "rand",
-]
-
-[[package]]
 name = "libc"
 version = "0.2.72"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -75,6 +68,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ca3129af7b92a17112d59ad498c6f81eaf463253766b90396d39ea7a39d6613c"
 dependencies = [
  "rand_core",
+]
+
+[[package]]
+name = "rust_guess"
+version = "0.1.0"
+dependencies = [
+ "rand",
 ]
 
 [[package]]

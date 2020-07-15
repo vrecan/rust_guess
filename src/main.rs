@@ -6,7 +6,7 @@ fn main() {
     let mut rng = rand::thread_rng();
     println!("Guess the number!");
     let mut guess;
-    loop {
+    while !quit {
         let mut quit = false;
         let secret = rng.gen_range(0, 20);
         guess = String::new();
@@ -19,9 +19,6 @@ fn main() {
         match guess.trim().parse::<i32>() {
         Ok(n) => check_guess(n, secret),
         Err(_) => quit = should_quit(guess)
-        }
-        if quit {
-            break;
         }
     }
 
@@ -39,8 +36,5 @@ fn main() {
             _ => false
         };
         return res;
-
     }
-
-    // println!("you guessed: {}", guess)
 }
