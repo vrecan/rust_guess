@@ -1,23 +1,35 @@
 use std::io;
+use rand::Rng;
+
 
 fn main() {
+    let mut rng = rand::thread_rng();
     println!("Guess the number!");
     let mut guess;
     loop {
         let mut quit = false;
+        let secret = rng.gen_range(0, 20);
         guess = String::new();
-        println!("Please input your guess or Q to quit.");
+        println!("Please input your guess between 0-20 or Q to quit.");
         
         io::stdin()
             .read_line(&mut guess)
             .expect("Failed to read line");
         
         match guess.trim().parse::<i32>() {
-        Ok(n) => println!("You guessed: {}", n),
+        Ok(n) => check_guess(n, secret),
         Err(_) => quit = should_quit(guess)
         }
         if quit {
             break;
+        }
+    }
+
+    fn check_guess(guess: i32, secret: i32) {
+        if guess == secret {
+            println!("Congrats you guessed it correctly!")
+        } else {
+            println!("Wrong, the answer was {}", secret)
         }
     }
 

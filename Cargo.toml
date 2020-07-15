@@ -1,9 +1,10 @@
 [package]
-name = "hello_cargo"
+name = "rust_guess"
 version = "0.1.0"
-authors = ["Ben Aldrich <baldrich@randori.com>"]
+authors = ["Ben Aldrich <vrecan@gmail.com>"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+rand = "0.7.3"
