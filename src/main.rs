@@ -6,8 +6,8 @@ fn main() {
     let mut rng = rand::thread_rng();
     println!("Guess the number!");
     let mut guess;
+    let mut quit = false;
     while !quit {
-        let mut quit = false;
         let secret = rng.gen_range(0, 20);
         guess = String::new();
         println!("Please input your guess between 0-20 or Q to quit.");
